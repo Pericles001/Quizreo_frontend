@@ -10,11 +10,12 @@ import {ComponentPreviews, useInitial} from "./dev";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
+
         <DevSupport ComponentPreviews={ComponentPreviews}
                     useInitialHook={useInitial}
         >
-            <App/>
         </DevSupport>
+        <App/>
     </BrowserRouter>
 );
 
