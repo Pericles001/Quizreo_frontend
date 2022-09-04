@@ -44,7 +44,7 @@ export function Signup() {
 
                     </Form.Group>
                     <Button className="mt-3 mb-3" variant="secondary" size="lg">
-                        Login
+                        Signup
                     </Button>
                     <Link className="d-block mt-3 mb-3 text-decoration-none" to="/login">Login here</Link>
                 </Form>

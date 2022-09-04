@@ -19,7 +19,8 @@ export function Board() {
                     <img src="https://i.imgur.com/GNAN8jG.gif" width="80%" alt="Quizreo rapid description"/>
                 </div>
                 <div className="mt-5 mb-3 d-grid gap-2 col-6 mx-auto" id="StartSec">
-                    <button className="btn btn-secondary shadow mb-3" style={{marginTop: "200px"}} type="submit"><h4>Get
+                    <button className="btn btn-secondary shadow mb-3" style={{marginTop: "200px"}} type="submit"
+                            onClick={toLog}><h4>Get
                         Started</h4></button>
                 </div>
             </Breakpoint>
