@@ -1,6 +1,6 @@
 import {Login, Reset, Signup} from "./Forms";
 import {Footer} from "./Footer/Footer";
 import {Board} from "./Header/Board";
-import {SuccessMsg} from "./status";
+import {StatusMsg} from "./status";
 
-export {Login, Signup, Footer, Board, Reset, SuccessMsg};
+export {Login, Signup, Footer, Board, Reset, StatusMsg};

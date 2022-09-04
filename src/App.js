@@ -6,7 +6,8 @@ import HomePage from "./pages/home";
 import SignupPage from "./pages/authentication/signup";
 import LoginPage from "./pages/authentication/login";
 import ResetPage from "./pages/authentication/reset";
-import {ResetMsgPage} from "./pages/authentication/post_reset";
+import {ResetMsgPage} from "./pages/status/post_reset";
+import {UnknownMsgPage} from "./pages/status/unknown_route";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                     <Route path="signup" element={<SignupPage/>}/>
                     <Route path="reset" element={<ResetPage/>}/>
                     <Route path="reset_msg" element={<ResetMsgPage/>}/>
+                    <Route path="*" element={<UnknownMsgPage/>}/>
                 </Routes>
 
             </div>

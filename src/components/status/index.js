@@ -1,3 +1,3 @@
-import {SuccessMsg} from "./success/Message";
+import {StatusMsg} from "./Message";
 
-export {SuccessMsg};
+export {StatusMsg};
