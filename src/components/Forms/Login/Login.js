@@ -35,7 +35,7 @@ export function Login() {
                         Login
                     </Button>
                     <Link className="d-block mt-3 mb-3 text-decoration-none" to="/signup">Signup here</Link>
-                    <Link className="d-block mt-3 mb-3 text-decoration-none" to="/forgot-password">Forgot
+                    <Link className="d-block mt-3 mb-3 text-decoration-none" to="/reset">Forgot
                         password?</Link>
                 </Form>
             </div>
