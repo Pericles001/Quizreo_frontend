@@ -2,7 +2,7 @@ import React from 'react';
 import {ComponentPreview, Previews} from '@react-buddy/ide-toolbox';
 import {PaletteTree} from './palette';
 import App from "../App";
-import {Login} from "../components";
+import {Login, Trial} from "../components";
 import {Sidebar} from "../components/Sidebar/Sidebar";
 
 const ComponentPreviews = () => {
@@ -16,6 +16,9 @@ const ComponentPreviews = () => {
             </ComponentPreview>
             <ComponentPreview path="/Sidebar">
                 <Sidebar/>
+            </ComponentPreview>
+            <ComponentPreview path="/Trial">
+                <Trial/>
             </ComponentPreview>
         </Previews>
     );
