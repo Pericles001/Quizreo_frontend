@@ -31,7 +31,9 @@ export function Login() {
                             We'll never share your password with anyone else.
                         </Form.Text>
                     </Form.Group>
-                    <Button className="mt-3 mb-3" variant="secondary" size="lg">
+                    <Button className="mt-3 mb-3" variant="secondary" size="lg" onClick={() => {
+                        navigate('/dashboard')
+                    }}>
                         Login
                     </Button>
                     <Link className="d-block mt-3 mb-3 text-decoration-none" to="/signup">Signup here</Link>
