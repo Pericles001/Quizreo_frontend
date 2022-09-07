@@ -1,10 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button, Form} from 'react-bootstrap';
 import {Link} from "react-router-dom";
 import {useLocation, useNavigate} from "react-router";
 
 export function Trial() {
+    const [type, setType] = useState("");
+    const toggleInput = () => {
+    }
     const navigate = useNavigate();
     const location = useLocation();
     const toLog = () => {
@@ -25,18 +28,19 @@ export function Trial() {
 
                     <Form.Group controlId="trialType" className="mt-3">
                         <Form.Label>Type</Form.Label>
-                        <Form.Select type="text" placeholder="Enter type">
-                            <option>QCM</option>
-                            <option>Direct</option>
-                            <option>survey</option>
+                        <Form.Select type="text" placeholder="Enter type" >
+                            <option value="Direct">Direct</option>
+                            <option value="Survey">survey</option>
                         </Form.Select>
                     </Form.Group>
 
-                    <Form.Group controlId="formBasicEmail" className="mt-3">
-                        <Form.Label>Answer</Form.Label>
-                        <Form.Control type="text" placeholder="Enter answer"/>
+                    <Form.Group controlId="trialAnswer" className="mt-3">
+                        <Form.Label>Content</Form.Label>
+                        <Form.Control type="text" placeholder="Enter content"/>
 
                     </Form.Group>
+
+
 
                     <Button className="mt-3 mb-3" variant="secondary" size="lg" onClick={()=> {
                         navigate('/dashboard')

@@ -2,16 +2,18 @@ import React from "react";
 import {Navigation} from 'react-minimal-side-navigation';
 import Icon from "awesome-react-icons";
 import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';
-
+import {useLocation, useNavigate} from "react-router-dom";
 
 export function Sidebar(props) {
+    const location = useLocation();
+    const navigate = useNavigate();
     return (
         <div className="container-fluid" style={{padding: "10%", height: "100vh"}}>
             <h4 className="mt-3 mb-3">Quizreo</h4>
             <Navigation
-                activeItemId="/home"
+                activeItemId={location.pathname}
                 onSelect={({itemId}) => {
-                    // maybe push to the route
+                    navigate(itemId);
                 }}
                 items={[
                     {
@@ -22,19 +24,18 @@ export function Sidebar(props) {
                         elemBefore: () => <Icon name="bell"/>,
                     },
                     {
-                        title: 'Survey',
-                        itemId: '/surveys',
+                        title: 'surveys',
                         elemBefore: () => <Icon name="star"/>,
                         subNav: [
                             {
                                 title: "Create",
-                                itemId: "/surveys/create",
+                                itemId: "/create_survey",
                                 // Optional
                                 elemBefore: () => <Icon name="plus"/>
                             },
                             {
                                 title: "List",
-                                itemId: "/surveys/list",
+                                itemId: "/list_survey",
                                 elemBefore: () => <Icon name="radio"/>
                             }
                         ]
