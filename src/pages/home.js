@@ -1,4 +1,4 @@
-import {Board, Footer, Trial} from "../components";
+import {Board, Footer, Survey, Trial} from "../components";
 import React from "react";
 
 export default function HomePage() {
@@ -6,7 +6,6 @@ export default function HomePage() {
         <div>
             <Board/>
             <Footer/>
-            <Trial/>
         </div>
     )
 }
