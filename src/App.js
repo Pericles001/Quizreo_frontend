@@ -9,6 +9,8 @@ import ResetPage from "./pages/authentication/reset";
 import {ResetMsgPage} from "./pages/status/post_reset";
 import {UnknownMsgPage} from "./pages/status/unknown_route";
 import {DashboardPage} from "./pages/dashboard";
+import {CreateSurveyPage} from "./pages/surveys/create";
+import {ListSurveyPage} from "./pages/surveys/list";
 
 function App() {
     return (
@@ -21,6 +23,8 @@ function App() {
                     <Route path="reset" element={<ResetPage/>}/>
                     <Route path="reset_msg" element={<ResetMsgPage/>}/>
                     <Route path="dashboard" element={<DashboardPage/>}/>
+                    <Route path="create_survey" element={<CreateSurveyPage/>}/>
+                    <Route path="list_survey" element={<ListSurveyPage/>}/>
                     <Route path="*" element={<UnknownMsgPage/>}/>
                 </Routes>
 
