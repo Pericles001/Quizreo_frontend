@@ -1,4 +1,4 @@
-import {Footer, Sidebar} from "../components";
+import {Footer, SampleCard, Sidebar} from "../components";
 import {Breakpoint} from "react-socks";
 
 export function DashboardPage() {
@@ -11,10 +11,12 @@ export function DashboardPage() {
                     </div>
                     <div className="col-7">
                         <h1 className="mt-5 mb-5">Dashboard</h1>
-                        <p> You are welcome here</p>
+                        <SampleCard title="Trending" quote="Survey example title" author="Pericles Adjovi"/>
+                        <SampleCard title="Top Rated" quote="Survey example title" author="Pericles Adjovi"/>
+                        <SampleCard title="Top Users" quote="Survey example title" author="Pericles Adjovi"/>
                     </div>
-                    <Footer/>
                 </div>
+                <Footer/>
             </Breakpoint>
             <Breakpoint medium up>
                 <div className="row">
@@ -22,9 +24,14 @@ export function DashboardPage() {
                         <Sidebar/>
                     </div>
                     <div className="col-9">
-                        <h2>Dashboard</h2>
+                        <h2 className="mt-5 mb-5">Welcome <h6>Pericles Adjovi</h6></h2>
+                        <SampleCard title="Trending" quote="Survey example title" author="Pericles Adjovi"/>
+                        <SampleCard title="Top Rated" quote="Survey example title" author="Pericles Adjovi"/>
+                        <SampleCard title="Top Users" quote="Survey example title" author="Pericles Adjovi"/>
+
                     </div>
                 </div>
+                <Footer/>
             </Breakpoint>
 
         </div>

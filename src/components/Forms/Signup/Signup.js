@@ -43,7 +43,9 @@ export function Signup() {
                         <Form.Control type="password" placeholder="Enter password"/>
 
                     </Form.Group>
-                    <Button className="mt-3 mb-3" variant="secondary" size="lg">
+                    <Button className="mt-3 mb-3" variant="secondary" size="lg" onClick={() => {
+                        navigate('/dashboard')
+                    }}>
                         Signup
                     </Button>
                     <Link className="d-block mt-3 mb-3 text-decoration-none" to="/login">Login here</Link>
