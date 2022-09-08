@@ -14,6 +14,10 @@ import {ListSurveyPage} from "./pages/surveys/list";
 import {CreateQuizPage} from "./pages/Quiz/create";
 import {ListQuizPage} from "./pages/Quiz/list";
 import {CreateTrialPage} from "./pages/Trial/create";
+import {ListTrialPage} from "./pages/Trial/list";
+import {ProfilePage} from "./pages/user/profile";
+import {AccountPage} from "./pages/user/account";
+import {SharePage} from "./pages/share/share";
 
 function App() {
     return (
@@ -31,6 +35,10 @@ function App() {
                     <Route path="create_trial" element={<CreateTrialPage/>}/>
                     <Route path="list_survey" element={<ListSurveyPage/>}/>
                     <Route path="list_quiz" element={<ListQuizPage/>}/>
+                    <Route path="list_trial" element={<ListTrialPage/>}/>
+                    <Route path="profile" element={<ProfilePage/>}/>
+                    <Route path="account" element={<AccountPage/>}/>
+                    <Route path="share" element={<SharePage/>}/>
                     <Route path="*" element={<UnknownMsgPage/>}/>
                 </Routes>
 
