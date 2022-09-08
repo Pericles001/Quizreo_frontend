@@ -1,10 +1,11 @@
-import {Footer, SurveyTable} from "../../components";
+import {Footer} from "../../components";
+import {TrialTable} from "../../components/Table/Trial/Table";
 
 
 export function ListTrialPage() {
     return (
         <div className="container-fluid mt-5 p-3">
-            <SurveyTable/>
+            <TrialTable/>
             <Footer/>
         </div>
     )
