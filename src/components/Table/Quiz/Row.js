@@ -4,6 +4,7 @@ export function TableRow(props) {
             <td>{props.ide}</td>
             <td>{props.title}</td>
             <td>{props.content}</td>
+            <td>{props.rest}</td>
             <td>{props.rel}</td>
             <td>
                 <button className="btn btn-sm bg-info text-white">Details</button>

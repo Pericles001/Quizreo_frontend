@@ -3,8 +3,8 @@ export function TableRow(props) {
         <tr>
             <td>{props.ide}</td>
             <td>{props.title}</td>
-            <td>{props.content}</td>
-            <td>{props.rel}</td>
+            <td>{props.type}</td>
+            <td>{props.count}</td>
             <td>
                 <button className="btn btn-sm bg-info text-white">Details</button>
             </td>
