@@ -11,6 +11,9 @@ import {UnknownMsgPage} from "./pages/status/unknown_route";
 import {DashboardPage} from "./pages/dashboard";
 import {CreateSurveyPage} from "./pages/surveys/create";
 import {ListSurveyPage} from "./pages/surveys/list";
+import {CreateQuizPage} from "./pages/Quiz/create";
+import {ListQuizPage} from "./pages/Quiz/list";
+import {CreateTrialPage} from "./pages/Trial/create";
 
 function App() {
     return (
@@ -24,7 +27,10 @@ function App() {
                     <Route path="reset_msg" element={<ResetMsgPage/>}/>
                     <Route path="dashboard" element={<DashboardPage/>}/>
                     <Route path="create_survey" element={<CreateSurveyPage/>}/>
+                    <Route path="create_quiz" element={<CreateQuizPage/>}/>
+                    <Route path="create_trial" element={<CreateTrialPage/>}/>
                     <Route path="list_survey" element={<ListSurveyPage/>}/>
+                    <Route path="list_quiz" element={<ListQuizPage/>}/>
                     <Route path="*" element={<UnknownMsgPage/>}/>
                 </Routes>
 
