@@ -16,13 +16,13 @@ export function Sidebar(props) {
                     navigate(itemId);
                 }}
                 items={[
-                    {
+                  /*  {
                         title: 'Feed',
                         itemId: '/feed',
                         // you can use your own custom Icon component as well
                         // icon is optional
                         elemBefore: () => <Icon name="bell"/>,
-                    },
+                    },*/
                     {
                         title: 'surveys',
                         elemBefore: () => <Icon name="star"/>,
@@ -93,26 +93,25 @@ export function Sidebar(props) {
                     },
                     {
                         title: 'Settings',
-                        itemId: '/settings',
                         elemBefore: () => <Icon name="settings"/>,
                         subNav: [
                             {
                                 title: "Profile",
-                                itemId: "/settings/profile",
+                                itemId: "/profile",
                                 elemBefore: () => <Icon name="user"/>
                             },
                             {
                                 title: "Account",
-                                itemId: "/settings/account",
+                                itemId: "/account",
                                 elemBefore: () => <Icon name="circle"/>
-                            },
-                            {
-                                title: "Help",
-                                itemId: "/settings/help",
-                                elemBefore: () => <Icon name="help-circle"/>
                             }
                         ]
                     },
+                    {
+                        title: "Exit",
+                        itemId: "/",
+                        elemBefore: () => <Icon name="trash" />
+                    }
                 ]}
             />
 
