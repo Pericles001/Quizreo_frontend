@@ -1,6 +1,6 @@
 import {Footer, Profile} from "../../components";
 
-export function ProfilePage(){
+export function ProfilePage() {
     return (
         <div>
             <Profile/>

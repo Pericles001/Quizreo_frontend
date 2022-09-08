@@ -13,8 +13,8 @@ export function ShareTable() {
             </tr>
             </thead>
             <tbody>
-            <TableRow ide="1"  title="Post victim" rel="02/02/2022" />
-            <TableRow ide="2"  title="Post " rel="04/02/2022" />
+            <TableRow ide="1" title="Post victim" rel="02/02/2022"/>
+            <TableRow ide="2" title="Post " rel="04/02/2022"/>
             </tbody>
         </Table>
     );

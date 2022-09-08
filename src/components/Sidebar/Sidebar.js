@@ -16,13 +16,13 @@ export function Sidebar(props) {
                     navigate(itemId);
                 }}
                 items={[
-                  /*  {
-                        title: 'Feed',
-                        itemId: '/feed',
-                        // you can use your own custom Icon component as well
-                        // icon is optional
-                        elemBefore: () => <Icon name="bell"/>,
-                    },*/
+                    /*  {
+                          title: 'Feed',
+                          itemId: '/feed',
+                          // you can use your own custom Icon component as well
+                          // icon is optional
+                          elemBefore: () => <Icon name="bell"/>,
+                      },*/
                     {
                         title: 'surveys',
                         elemBefore: () => <Icon name="star"/>,
@@ -110,7 +110,7 @@ export function Sidebar(props) {
                     {
                         title: "Exit",
                         itemId: "/",
-                        elemBefore: () => <Icon name="trash" />
+                        elemBefore: () => <Icon name="trash"/>
                     }
                 ]}
             />

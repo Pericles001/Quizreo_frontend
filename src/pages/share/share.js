@@ -1,6 +1,6 @@
-import {ShareTable, Footer} from "../../components";
+import {Footer, ShareTable} from "../../components";
 
-export function SharePage(){
+export function SharePage() {
     return (
         <div className="container-fluid mt-5 p-3">
             <ShareTable/>

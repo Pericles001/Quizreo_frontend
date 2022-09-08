@@ -16,8 +16,8 @@ export function TrialTable() {
             </tr>
             </thead>
             <tbody>
-            <TableRow ide="1"  title="Post victim" type="Gon" count="6"/>
-            <TableRow ide="2"  title="Post " type="Kilua" count="7"/>
+            <TableRow ide="1" title="Post victim" type="Gon" count="6"/>
+            <TableRow ide="2" title="Post " type="Kilua" count="7"/>
             </tbody>
         </Table>
     );

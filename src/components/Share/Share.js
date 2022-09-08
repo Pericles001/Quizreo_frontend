@@ -1,4 +1,4 @@
-export function Share (){
+export function Share() {
     return (
         <div className="container-fluid">
 
