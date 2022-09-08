@@ -5,9 +5,28 @@ import {Link} from "react-router-dom";
 import {useLocation, useNavigate} from "react-router";
 
 export function Trial() {
-    const [type, setType] = useState("");
-    const toggleInput = () => {
+    const [num, setNum] = useState(0);
+
+    const handleInput = (e) => {
+        setNum(e.target.value);
     }
+
+    const setInputs = () => {
+        let inputs = [];
+        for (let i = 0; i < num; i++) {
+            inputs.push(<Form.Group controlId="formBasicEmail">
+                <Form.Label>Question {i + 1}</Form.Label>
+                <Form.Select aria-label="Edit question">
+                    <option>Choose...</option>
+                    <option value="1">Open ended</option>
+                    <option value="2">Multiple choice</option>
+                    <option value="3">True/False</option>
+                </Form.Select>
+            </Form.Group>);
+        }
+        return inputs;
+    }
+
     const navigate = useNavigate();
     const location = useLocation();
     const toLog = () => {
@@ -28,21 +47,28 @@ export function Trial() {
 
                     <Form.Group controlId="trialType" className="mt-3">
                         <Form.Label>Type</Form.Label>
-                        <Form.Select type="text" placeholder="Enter type" >
+                        <Form.Select type="text" placeholder="Enter type">
                             <option value="Direct">Direct</option>
                             <option value="Survey">survey</option>
                         </Form.Select>
                     </Form.Group>
 
-                    <Form.Group controlId="trialAnswer" className="mt-3">
-                        <Form.Label>Content</Form.Label>
-                        <Form.Control type="text" placeholder="Enter content"/>
-
+                    <Form.Group controlId="trialTime" className="mt-3">
+                        <Form.Label>Time</Form.Label>
+                        <Form.Control type="number" aria-valuemin="0" aria-valuemax="50" placeholder="Enter time"/>
                     </Form.Group>
 
 
+                    <Form.Group controlId="trialNumbers" className="mt-3">
+                        <Form.Label>Settings</Form.Label>
+                        <Form.Control type="number" aria-valuemin="0" aria-valuemax="50"
+                                      placeholder="Enter number of questions" onChange={handleInput}/>
+                    </Form.Group>
 
-                    <Button className="mt-3 mb-3" variant="secondary" size="lg" onClick={()=> {
+
+                    {setInputs()}
+
+                    <Button className="mt-3 mb-3" variant="secondary" size="lg" onClick={() => {
                         navigate('/dashboard')
                     }}>
                         Create

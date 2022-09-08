@@ -42,36 +42,34 @@ export function Sidebar(props) {
                     },
                     {
                         title: 'Quiz',
-                        itemId: '/quizzes',
                         elemBefore: () => <Icon name="check-square"/>,
                         subNav: [
                             {
                                 title: "Create",
-                                itemId: "/quizzes/create",
+                                itemId: "/create_quiz",
                                 // Optional
                                 elemBefore: () => <Icon name="plus"/>
                             },
                             {
                                 title: "List",
-                                itemId: "/quizzes/list",
+                                itemId: "/list_quiz",
                                 elemBefore: () => <Icon name="radio"/>
                             }
                         ]
                     },
                     {
                         title: 'Trial',
-                        itemId: '/trials',
                         elemBefore: () => <Icon name="check-circle"/>,
                         subNav: [
                             {
                                 title: "Create",
-                                itemId: "/trials/create",
+                                itemId: "/create_trial",
                                 // Optional
                                 elemBefore: () => <Icon name="plus"/>
                             },
                             {
                                 title: "List",
-                                itemId: "/trials/list",
+                                itemId: "/list_trial",
                                 elemBefore: () => <Icon name="radio"/>
                             }
                         ]
