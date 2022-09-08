@@ -1,5 +1,5 @@
 import Table from 'react-bootstrap/Table';
-import {TableRow} from "../Row";
+import {TableRow} from "./Row";
 
 export function QuizTable() {
     return (
@@ -11,7 +11,7 @@ export function QuizTable() {
                 <th>content</th>
                 <th>answer</th>
                 <th>created_at</th>
-                <th>share</th>
+                <th>details</th>
                 <th>update</th>
                 <th>delete</th>
             </tr>
