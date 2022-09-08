@@ -1,4 +1,4 @@
-import {Footer, Sidebar, SampleCard} from "../components";
+import {Footer, SampleCard, Sidebar} from "../components";
 import {Breakpoint} from "react-socks";
 
 export function DashboardPage() {
@@ -24,7 +24,7 @@ export function DashboardPage() {
                         <Sidebar/>
                     </div>
                     <div className="col-9">
-                        <h2 className="mt-5 mb-5">Welcome <h6>Pericles Adjovi</h6> </h2>
+                        <h2 className="mt-5 mb-5">Welcome <h6>Pericles Adjovi</h6></h2>
                         <SampleCard title="Trending" quote="Survey example title" author="Pericles Adjovi"/>
                         <SampleCard title="Top Rated" quote="Survey example title" author="Pericles Adjovi"/>
                         <SampleCard title="Top Users" quote="Survey example title" author="Pericles Adjovi"/>

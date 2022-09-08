@@ -1,4 +1,4 @@
-import {Board, Footer, Survey, Trial} from "../components";
+import {Board, Footer} from "../components";
 import React from "react";
 
 export default function HomePage() {
