@@ -10,7 +10,7 @@ export function SurveyTable() {
                 <th>title</th>
                 <th>content</th>
                 <th>created_at</th>
-                <th>share</th>
+                <th>details</th>
                 <th>update</th>
                 <th>delete</th>
             </tr>
