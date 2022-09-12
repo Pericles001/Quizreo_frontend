@@ -17,11 +17,11 @@ export function Login() {
                 <Form className="mt-5 mx-auto col-md-4 shadow" style={{backgroundColor: "#D9D9D9"}}>
                     <h4 className="text-center fw-semibold mt-3 mb-3" style={{cursor: "Pointer"}}
                         onClick={toLog}>Quizreo</h4>
-                    <Form.Group controlId="formBasicEmail" className="mt-3">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email"/>
+                    <Form.Group controlId="formBasicUsername" className="mt-3">
+                        <Form.Label>Username</Form.Label>
+                        <Form.Control type="text" placeholder="Enter username"/>
                         <Form.Text className="text-muted text-justify">
-                            We'll never share your email with anyone else.
+                            We'll never share your username with anyone else.
                         </Form.Text>
                     </Form.Group>
                     <Form.Group controlId="formBasicPassword" className="mt-3">
