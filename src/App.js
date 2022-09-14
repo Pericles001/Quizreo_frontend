@@ -1,10 +1,6 @@
-
 import {BreakpointProvider} from "react-socks";
 import './App.css';
 import {Route, Routes} from "react-router-dom";
-import {db} from "./firebase.config";
-import {collection, getDocs} from "firebase/firestore";
-import {useState, useEffect} from "react";
 import React from "react";
 import HomePage from "./pages/home";
 import SignupPage from "./pages/authentication/signup";

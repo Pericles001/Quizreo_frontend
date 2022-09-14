@@ -18,14 +18,19 @@ export function Login() {
     const handleSubmit = () => {
         try {
             console.log(username, password);
-            if (username.length == 0 || password.length == 0) {
+            if (username.length === 0 || password.length === 0) {
                 setRedStyle("text-danger");
-                if (username.length == 0) {
+                if (username.length === 0) {
                     setUsrMsg("Username is required");
-                } if (password.length == 0) {
-                    setPassMsg("Password is required");
+                } else if (username.length !== 0) {
+                    setUsrMsg("We'll never share your username with anyone else.");
                 }
-            }else {
+                if (password.length === 0) {
+                    setPassMsg("Password is required");
+                } else if (password.length !== 0) {
+                    setPassMsg("We'll never share your password with anyone else.");
+                }
+            } else {
                 navigate('/dashboard')
             }
         } catch (e) {
@@ -43,20 +48,22 @@ export function Login() {
                         onClick={toLog}>Quizreo</h4>
                     <Form.Group controlId="formBasicUsername" className="mt-3">
                         <Form.Label>Username</Form.Label>
-                        <Form.Control type="text" placeholder="Enter username" onChange={(e) => setUsername(e.target.value)}/>
+                        <Form.Control type="text" placeholder="Enter username"
+                                      onChange={(e) => setUsername(e.target.value)}/>
                         <Form.Text className={"text-muted text-justify " + redStyle}>
                             {UsrMsg}
                         </Form.Text>
                     </Form.Group>
                     <Form.Group controlId="formBasicPassword" className="mt-3">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Enter password" onChange={(e) => setPassword(e.target.value)}/>
+                        <Form.Control type="password" placeholder="Enter password"
+                                      onChange={(e) => setPassword(e.target.value)}/>
                         <Form.Text id="WarningText" className={"text-muted text-justify " + redStyle}>
                             {passMsg}
                         </Form.Text>
                     </Form.Group>
                     <Button className="mt-3 mb-3" variant="secondary" size="lg" onClick={() => {
-                       handleSubmit()
+                        handleSubmit()
                     }}>
                         Login
                     </Button>
