@@ -2,29 +2,39 @@ import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button, Form} from 'react-bootstrap';
 import {Link} from "react-router-dom";
-import {useLocation, useNavigate} from "react-router";
+import {useNavigate} from "react-router";
 
 export function Trial() {
     const [num, setNum] = useState(0);
     const [title, setTitle] = useState("");
     const [type, setType] = useState("");
     const [time, setTime] = useState("");
-    const [input, setInput] = useState("");
+    const [input, setInput] = useState([]);
     const [titleMsg, setTitleMsg] = useState("");
     const [typeMsg, setTypeMsg] = useState("");
     const [timeMsg, setTimeMsg] = useState("");
     const [inputMsg, setInputMsg] = useState("");
-
+    let inputs = [];
     const handleInput = (e) => {
         setNum(e.target.value);
     }
 
+    const handleEdit = (e) => {
+        /*
+        * 1. get the index of the input
+        * 2. get the value of the input
+        * 3. update the input array
+        * */
+        let index = e.target.id;
+        let value = e.target.value;
+        input.push(value);
+    }
+
     const setInputs = () => {
-        let inputs = [];
         for (let i = 0; i < num; i++) {
-            inputs.push(<Form.Group controlId="formBasicEmail">
+            inputs.push(<Form.Group controlId="formBasicInput">
                 <Form.Label>Question {i + 1}</Form.Label>
-                <Form.Select aria-label="Edit question" onChange={(e) => setInput(e.target.value)}>
+                <Form.Select aria-label="Edit question" onChange={handleEdit}>
                     <option>Choose...</option>
                     <option value="Open ended">Open ended</option>
                     <option value="Multiple choice">Multiple choice</option>
@@ -36,7 +46,6 @@ export function Trial() {
     }
 
     const navigate = useNavigate();
-    const location = useLocation();
     const toLog = () => {
         navigate('/');
     }
@@ -64,11 +73,13 @@ export function Trial() {
                 } else if (input.length !== 0) {
                     setInputMsg("")
                 }
+            } else {
+                navigate('/dashboard');
             }
         } catch (e) {
             console.log(e);
         } finally {
-            console.log(title, type, time, num, setInputs())
+            console.log(title, type, time, num, Array.isArray(input) ? input.map((item) => item) : input);
         }
     }
 
@@ -92,6 +103,7 @@ export function Trial() {
                         <Form.Select type="text" placeholder="Enter type" onChange={(e) => setType(e.target.value)}>
                             <option value="Direct">Direct</option>
                             <option value="Survey">survey</option>
+                            <option value="Other">other</option>
                         </Form.Select>
                         <Form.Text className="text-muted text-justify">
                             {typeMsg}
