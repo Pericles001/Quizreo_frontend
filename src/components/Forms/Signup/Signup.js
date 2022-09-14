@@ -4,8 +4,18 @@ import {Button, Form} from 'react-bootstrap';
 import {Link} from "react-router-dom";
 import {useNavigate} from "react-router";
 import {useEffect, useState} from "react";
+import axios from "axios";
 
 export function Signup() {
+
+
+    const client = axios.create({
+        baseURL: "http://localhost:8000/users"
+    })
+
+
+    const [users, setUsers] = useState([]);
+
     const [redStyle, setRedStyle] = useState("");
     const [firstname, setFirstname] = useState("");
     const [lastname, setLastname] = useState("");
@@ -23,7 +33,28 @@ export function Signup() {
         navigate('/');
     }
 
-    const handleSubmit = () => {
+    const addUser = (username, firstname, lastname, email, password) => {
+     /*
+     * want to create a new user
+     * then update users array
+     * and avoid any error of type 422 unprocessable entity
+     * */
+        client.post('/add', {
+            username: username,
+            firstname: firstname,
+            lastname: lastname,
+            email: email,
+            password: password
+        }).then((response) => {
+            setUsers([...users, response.data])
+        }
+        ).catch((error) => {
+            console.log(error)
+        }
+        )
+    }
+
+    const handleSubmit = (e) => {
         try {
             if (firstname.length === 0 || lastname.length === 0 || username.length === 0 || email.length === 0 || password.length === 0) {
                 setRedStyle("text-danger");
@@ -53,12 +84,14 @@ export function Signup() {
                     setPasswordMsg("");
                 }
             } else {
-                navigate('/dashboard')
+                e.preventDefault();
+                addUser(username, firstname, lastname, email, password);
+                navigate('/dashboard');
             }
         } catch (e) {
             console.log(e);
         } finally {
-            console.log(firstname, lastname, username, email, password);
+            console.log(firstname, lastname, username, email, password, users);
         }
     }
 
