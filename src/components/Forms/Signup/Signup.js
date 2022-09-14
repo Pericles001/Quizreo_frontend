@@ -2,22 +2,23 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button, Form} from 'react-bootstrap';
 import {Link} from "react-router-dom";
-import {useLocation, useNavigate} from "react-router";
+import {useNavigate} from "react-router";
+import {useEffect, useState} from "react";
 
 export function Signup() {
-    const [redStyle, setRedStyle] = React.useState("");
-    const [firstname, setFirstname] = React.useState("");
-    const [lastname, setLastname] = React.useState("");
-    const [username, setUsername] = React.useState("");
-    const [email, setEmail] = React.useState("");
-    const [password, setPassword] = React.useState("");
-    const [firstnameMsg, setFirstnameMsg] = React.useState("We'll never share your firstname with anyone else.");
-    const [lastnameMsg, setLastnameMsg] = React.useState("We'll never share your lastname with anyone else.");
-    const [usernameMsg, setUsernameMsg] = React.useState("We'll never share your username with anyone else.");
-    const [emailMsg, setEmailMsg] = React.useState("We'll never share your email with anyone else.");
-    const [passwordMsg, setPasswordMsg] = React.useState("We'll never share your password with anyone else.");
+    const [redStyle, setRedStyle] = useState("");
+    const [firstname, setFirstname] = useState("");
+    const [lastname, setLastname] = useState("");
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [firstnameMsg, setFirstnameMsg] = useState("We'll never share your firstname with anyone else.");
+    const [lastnameMsg, setLastnameMsg] = useState("We'll never share your lastname with anyone else.");
+    const [usernameMsg, setUsernameMsg] = useState("We'll never share your username with anyone else.");
+    const [emailMsg, setEmailMsg] = useState("We'll never share your email with anyone else.");
+    const [passwordMsg, setPasswordMsg] = useState("We'll never share your password with anyone else.");
     const navigate = useNavigate();
-    const location = useLocation();
+
     const toLog = () => {
         navigate('/');
     }
