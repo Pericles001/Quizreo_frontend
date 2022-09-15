@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button, Form} from 'react-bootstrap';
 import {Link} from "react-router-dom";
 import {useNavigate} from "react-router";
-import client from "../../../api/axios";
 
 export function Signup() {
 
@@ -27,7 +26,6 @@ export function Signup() {
     const toLog = () => {
         navigate('/');
     }
-
 
 
     const handleSubmit = (e) => {

@@ -23,7 +23,6 @@ export function Login() {
     }
 
 
-
     const getUsers = async () => {
 
         const response = await client.get(`/${username}/${password}`, {
@@ -60,10 +59,10 @@ export function Login() {
                     setPassMsg("We'll never share your password with anyone else.");
                 }
             } else {
-            getUsers().then(
-                () => {
-                 console.log("ok");
-                })
+                getUsers().then(
+                    () => {
+                        console.log("ok");
+                    })
             }
         } catch (e) {
             console.log(e);
