@@ -3,8 +3,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button, Form} from 'react-bootstrap';
 import {Link} from "react-router-dom";
 import {useLocation, useNavigate} from "react-router";
+import client from "../../../api/axios";
+import {storeUserSession} from "../../../api/resources/user";
+
+export const active = [];
 
 export function Login() {
+
+    const [users, setUsers] = useState([]);
     const [redStyle, setRedStyle] = useState("");
     const [UsrMsg, setUsrMsg] = useState("We'll never share your username with anyone else.");
     const [passMsg, setPassMsg] = useState("We'll never share your password with anyone else.");
@@ -15,6 +21,29 @@ export function Login() {
     const toLog = () => {
         navigate('/');
     }
+
+
+
+    const getUsers = async () => {
+
+        const response = await client.get(`/${username}/${password}`, {
+            validateStatus: function (status) {
+                return status < 500; // Reject only if the status code is greater than or equal to 500
+            }
+        });
+        if (response.status === 302) {
+            users.push(response.data);
+            storeUserSession(response.data);
+            active.push(response.data);
+            navigate('/dashboard');
+        } else {
+            setRedStyle("text-danger");
+            setUsrMsg("Username or password is incorrect");
+            setPassMsg("");
+        }
+    }
+
+
     const handleSubmit = () => {
         try {
             console.log(username, password);
@@ -31,12 +60,15 @@ export function Login() {
                     setPassMsg("We'll never share your password with anyone else.");
                 }
             } else {
-                navigate('/dashboard')
+            getUsers().then(
+                () => {
+                 console.log("ok");
+                })
             }
         } catch (e) {
             console.log(e);
         } finally {
-            console.log(username, password);
+            console.log(active);
         }
     }
 
