@@ -1,37 +1,30 @@
 import {Footer, SampleCard, Sidebar} from "../components";
 import {Breakpoint} from "react-socks";
 import {active} from "../components/Forms/Login/Login";
-import client from "../api/axios";
 import {useState} from "react";
 
 export function DashboardPage() {
     const [users, setUsers] = useState([]);
-    const user = active;
+    const [user, setUser] = useState([active]);
 
-    const getAllUsers = async () => {
-        const response = await client.get(`/`, {
-            validateStatus: function (status) {
-                return status < 500; // Reject only if the status code is greater than or equal to 500
-            }
-        });
-        if (response.status === 302) {
-            setUsers(response.data)
-        }
-    }
-    getAllUsers().then(r => console.log("ok"));
+    // const displayUser = user.map((user) => {
+    // return (
+    //     <div className="card">
+    //         <div className="card-body">
+    //             <h5 className="card-title">Welcome {user.username}</h5>
+    //             <p className="card-text">You are logged in.</p>
+    //         </div>
+    //     </div>
+    // )
+    // })
 
-
-    console.log(user);
-    const displayUser = user.map((user) => {
-        return (
-            <div className="card">
-                <div className="card-body">
-                    <h5 className="card-title">Welcome {user.username}</h5>
-                    <p className="card-text">You are logged in.</p>
-                </div>
-            </div>
-        )
+    const displayUser = user.filter((user) => {
+        const last = user.length - 1
+        const lastUser = user[last]
+        return lastUser.username
     })
+
+
     return (
         <div className="container-fluid">
             <Breakpoint small down>
@@ -54,7 +47,7 @@ export function DashboardPage() {
                         <Sidebar/>
                     </div>
                     <div className="col-9">
-                        {displayUser}
+                        {console.log(displayUser)}
                         <SampleCard title="Trending" quote="Survey example title" author="Pericles Adjovi"/>
                         <SampleCard title="Top Rated" quote="Survey example title" author="Pericles Adjovi"/>
                         <SampleCard title="Top Users" quote="Survey example title" author="Pericles Adjovi"/>
