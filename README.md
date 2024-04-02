@@ -40,7 +40,7 @@ Screenshots of the UI are visible below :
 
 ## Usage
 
-You can view live demom on the  following link : __coming soon__
+You can view live demo on the  following URL : __coming soon__
 
 Or you can try locally:
 
